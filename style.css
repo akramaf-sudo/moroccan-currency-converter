@@ -307,7 +307,52 @@ body {
     color: var(--accent-green);
 }
 
-.action-footer {
+.action-
+
+/* Ad Slot Stylings */
+.ad-slot {
+    width: 100%;
+    max-width: 440px;
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.ad-placeholder {
+    width: 100%;
+    height: 90px;
+    /* Standard leaderboard depth for mobile/small desktop */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.ad-placeholder span {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    opacity: 0.5;
+}
+
+.top-banner {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.bottom-banner {
+    margin-bottom: 0;
+    margin-top: 2rem;
+}
+
+footer {
     margin-top: 2rem;
 }
 
