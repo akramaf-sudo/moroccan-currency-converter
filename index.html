@@ -18,13 +18,38 @@
     <!-- 3D Spinning Coin Scene -->
     <div class="coin-scene">
         <div class="coin">
-            <div class="coin-face front">1</div>
+            <!-- Front face with "1" and central heraldry elements -->
+            <div class="coin-face front">
+                <div class="inner-circle">
+                    <span class="value">1</span>
+                    <span class="currency-text">درهم واحد</span>
+                </div>
+                <div class="dots-border"></div>
+            </div>
+
+            <!-- Back face with the Royal Shield of Morocco -->
             <div class="coin-face back">
-                <svg viewBox="0 0 100 100">
-                    <path d="M50 20 L55 35 L70 35 L58 45 L62 60 L50 50 L38 60 L42 45 L30 35 L45 35 Z"
-                        fill="currentColor" />
-                    <text x="50" y="85" font-size="12" text-anchor="middle" font-weight="bold">درهم واحد</text>
-                </svg>
+                <div class="royal-emblem">
+                    <svg viewBox="0 0 100 100" class="emblem-svg">
+                        <!-- Crown -->
+                        <path d="M40 20 Q50 10 60 20 L58 25 Q50 22 42 25 Z" fill="currentColor" />
+                        <!-- Shield with Pentagram and Sun -->
+                        <path d="M35 30 Q50 25 65 30 L65 50 Q50 60 35 50 Z" fill="none" stroke="currentColor"
+                            stroke-width="2" />
+                        <circle cx="50" cy="40" r="8" fill="none" stroke="currentColor" stroke-width="1"
+                            stroke-dasharray="2 1" />
+                        <path d="M50 35 L53 43 L45 38 L55 38 L47 43 Z" fill="currentColor" />
+                        <!-- Supporters (Lions - stylized) -->
+                        <path d="M25 35 Q20 45 30 55 M75 35 Q80 45 70 55" fill="none" stroke="currentColor"
+                            stroke-width="2" />
+                        <!-- Text/Years -->
+                        <text x="50" y="75" font-size="6" text-anchor="middle" font-family="serif">المملكة
+                            المغربية</text>
+                        <text x="30" y="85" font-size="5" text-anchor="middle">1432</text>
+                        <text x="70" y="85" font-size="5" text-anchor="middle">2011</text>
+                    </svg>
+                </div>
+                <div class="dots-border"></div>
             </div>
             <div class="coin-edge"></div>
         </div>

@@ -57,36 +57,76 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: linear-gradient(135deg, #e2e8f0 0%, #94a3b8 50%, #64748b 100%);
-    border: 8px solid #cbd5e1;
+    background: radial-gradient(circle at 30% 30%, #f1f5f9 0%, #cbd5e1 50%, #94a3b8 100%);
+    border: 4px solid #94a3b8;
     display: flex;
     justify-content: center;
     align-items: center;
     backface-visibility: hidden;
-    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.2);
+    box-shadow:
+        inset 0 0 50px rgba(0, 0, 0, 0.1),
+        inset 0 0 10px rgba(255, 255, 255, 0.5);
+    overflow: hidden;
 }
 
-.coin-face.front {
-    font-size: 120px;
-    font-weight: 800;
+.inner-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: #475569;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5), -1px -1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.coin-face.front .value {
+    font-size: 110px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.coin-face.front .currency-text {
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: -10px;
+}
+
+/* Royal Emblem Styling */
+.royal-emblem {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #475569;
+}
+
+.emblem-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Dotted Border for Realism */
+.dots-border {
+    position: absolute;
+    inset: 12px;
+    border: 4px dotted rgba(71, 85, 105, 0.4);
+    border-radius: 50%;
 }
 
 .coin-face.back {
     transform: rotateY(180deg);
-    color: #475569;
-    padding: 40px;
 }
 
 .coin-edge {
     position: absolute;
-    width: 20px;
+    width: 18px;
     height: 100%;
     left: 50%;
     top: 0;
-    margin-left: -10px;
-    background: #94a3b8;
+    margin-left: -9px;
+    background: repeating-linear-gradient(to bottom,
+            #94a3b8,
+            #94a3b8 2px,
+            #64748b 2px,
+            #64748b 4px);
     transform: rotateY(90deg);
     transform-style: preserve-3d;
 }
