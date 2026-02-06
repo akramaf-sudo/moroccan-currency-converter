@@ -1,0 +1,229 @@
+:root {
+    --primary-bg: #0f172a;
+    --card-glass: rgba(15, 23, 42, 0.6);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --input-bg: rgba(2, 6, 23, 0.4);
+    --input-border: rgba(255, 255, 255, 0.1);
+    --input-focus: #0d9488;
+    /* Moroccan Teal */
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --accent-gold: #d4af37;
+    --accent-green: #10b981;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+    background-color: var(--primary-bg);
+    overflow: hidden;
+}
+
+/* Background layers for depth */
+.bg-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 15% 50%, rgba(13, 148, 136, 0.15), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.1), transparent 25%);
+    z-index: -2;
+}
+
+.bg-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 15-15 15-15-15L30 0zm0 60l15-15-15-15-15 15 15 15z' fill='%23d4af37' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    z-index: -1;
+}
+
+.main-container {
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.glass-card {
+    background: var(--card-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.card-header {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.card-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.card-header p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Input Rows */
+.input-row {
+    margin-bottom: 0;
+}
+
+.input-row label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.input-box:focus-within {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.2);
+    background: rgba(2, 6, 23, 0.6);
+}
+
+.input-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    min-width: 0;
+    /* Prevents overflow */
+}
+
+/* Currency Selector Badge */
+.currency-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-left: 1rem;
+    border-left: 1px solid var(--input-border);
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+}
+
+.currency-selector .flag,
+.currency-selector .icon {
+    font-size: 1.5rem;
+}
+
+.currency-selector .code {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.currency-selector.secondary .code {
+    color: var(--text-secondary);
+}
+
+/* Connectors */
+.rate-divider {
+    position: relative;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
+    /* Align with input start */
+}
+
+/* Vertical line connecting inputs */
+.rate-divider::before {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    /* approximates visual center of left padding area */
+    top: -50%;
+    height: 200%;
+    width: 2px;
+    background: var(--input-border);
+    z-index: 0;
+    display: none;
+    /* Hidden for clearer cleaner look like modern wise, or we can enable */
+}
+
+.rate-pill {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 0.25rem 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--input-border);
+    margin: 0.5rem 0;
+    z-index: 1;
+}
+
+.rate-pill svg {
+    color: var(--accent-green);
+}
+
+.action-footer {
+    margin-top: 2rem;
+}
+
+.cta-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--accent-green);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cta-button:hover {
+    background: #059669;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+    .glass-card {
+        padding: 1.5rem;
+    }
+
+    .input-box input {
+        font-size: 1.25rem;
+    }
+}

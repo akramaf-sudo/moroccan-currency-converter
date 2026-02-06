@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moroccan Wise-Style Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+
+    <main class="main-container">
+        <div class="glass-card">
+            <header class="card-header">
+                <h1>Currency Converter</h1>
+                <p>Real-time Moroccan local rates</p>
+            </header>
+
+            <div class="converter-body">
+                <!-- MAD Section -->
+                <div class="input-row">
+                    <label for="mad">You have</label>
+                    <div class="input-box">
+                        <input type="number" id="mad" placeholder="100" step="any">
+                        <div class="currency-selector">
+                            <span class="flag">🇲🇦</span>
+                            <span class="code">MAD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rate Pill 1 -->
+                <div class="rate-divider">
+                    <div class="rate-pill">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M7 11l5-5 5 5M7 13l5 5 5-5" />
+                        </svg>
+                        <span>1 MAD = 20 Riyals</span>
+                    </div>
+                </div>
+
+                <!-- Riyal Section -->
+                <div class="input-row">
+                    <label for="riyal">Converted to</label>
+                    <div class="input-box">
+                        <input type="number" id="riyal" placeholder="2000" step="any">
+                        <div class="currency-selector secondary">
+                            <span class="icon">🪙</span>
+                            <span class="code">RIYAL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rate Pill 2 -->
+                <div class="rate-divider">
+                    <div class="rate-pill">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M7 11l5-5 5 5M7 13l5 5 5-5" />
+                        </svg>
+                        <span>1 MAD = 100 Francs</span>
+                    </div>
+                </div>
+
+                <!-- Franc Section -->
+                <div class="input-row">
+                    <label for="franc">Converted to</label>
+                    <div class="input-box">
+                        <input type="number" id="franc" placeholder="10000" step="any">
+                        <div class="currency-selector secondary">
+                            <span class="icon">🪙</span>
+                            <span class="code">FRANC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-footer">
+                <button class="cta-button">
+                    View Transfer Details
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
